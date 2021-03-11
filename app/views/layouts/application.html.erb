@@ -19,7 +19,14 @@
   <body>
     <%= render 'layouts/partials/nav'%>
     <div class="container">
+
+      <br>
+      <% if notice %>
+          <%= render 'layouts/partials/alerts'%>
+      <% end %>
+
       <br/>
+
       
      <%= yield %>
     </div>

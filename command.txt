@@ -1,0 +1,7 @@
+to create a model used
+
+rails g scaffold friends first_name:string last_name:string email:string phone:string twiter:string
+
+to cretae a database schema and for creating the table use
+
+rails db:migrate
