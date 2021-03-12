@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_11_145717) do
+ActiveRecord::Schema.define(version: 2021_03_12_121146) do
 
   create_table "friends", charset: "utf8mb4", force: :cascade do |t|
     t.string "first_name"
@@ -18,6 +18,14 @@ ActiveRecord::Schema.define(version: 2021_03_11_145717) do
     t.string "email"
     t.string "phone"
     t.string "twiter"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "portfolios", charset: "utf8mb4", force: :cascade do |t|
+    t.string "title"
+    t.text "subtitle"
+    t.text "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

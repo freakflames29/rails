@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :portfolios
   get 'deadpool/home'
   get 'sourav',to: 'deadpool#about'
   get 'deadpool/download'
