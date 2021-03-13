@@ -1,0 +1,10 @@
+<h1>Your portfolio</h1>
+<%=link_to "Create new portfolio" ,new_portfolio_path %><br>
+<hr>
+<%=@portfolios.each do |item| %>
+  Title:- <%=item.title %><br>
+  Subtitle:- <%=item.subtitle %><br> <br>
+  <%=link_to "Edit", edit_portfolio_path(item.id) %>
+
+  <hr>
+<% end %>

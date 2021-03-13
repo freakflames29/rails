@@ -1,0 +1,13 @@
+<h1> edit your portfolio</h1>
+<%=link_to "Create new portfolio" ,new_portfolio_path %>
+<%=form_for @portfolio do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %> <br><br>
+  <%= f.label :subtitle %>
+  <%= f.text_field :subtitle %><br><br>
+  <%= f.label :image %>
+  <%= f.text_field :image %><br><br>
+  <%=f.submit%>
+  <%=link_to "Back", portfolios_path %>
+
+<%end %>
