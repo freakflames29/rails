@@ -4,16 +4,30 @@ Rails.application.routes.draw do
   get 'deadpool/download'
 
 
-  get 'crud' ,to:"crud#index", :as=>"index" # as is used for the prefix
-  get 'crud/new' ,to: "crud#new" ,:as=>"new"
-  # get 'crud/edit', to:"crud#edit", :as=>"edit"
-  post 'crud/create', to:"crud#create" 
-  get 'crud/edit/:id', to: "crud#edit"
+  # get 'crud' ,to:"cruds#index", :as=>"index" # as is used for the prefix
+  # get 'crud/new' ,to: "cruds#new" ,:as=>"new"
+  # # get 'crud/edit', to:"crud#edit", :as=>"edit"
+  # get 'crud/:id/edit', to: "cruds#edit"
 
-  get 'crud/show/:id', to:"crud#show",:as=>"show"
-  delete 'crud/show/:id', to:"crud#destroy"
-  put 'crud/show/:id', to:"crud#update"
+  # get 'crud/:id', to:"cruds#show",:as=>"show"
+  # delete 'crud/:id', to:"cruds#destroy"
+  # patch 'crud/:id', to:"cruds#update"
+  # post 'crud', to:"cruds#create" #create
+
+
+
+
+  # movies routes
+
+  get 'movies', to: 'movies#index'
+  get 'movies/new' ,to: 'movies#new'
+
+  post 'movies', to:'movies#create' #create 
+
+  get 'movies/:id' ,to:'movies#show',:as=>"show"
+
+  get 'movies/:id/edit' ,to:'movies#edit'
    
- 
+  patch 'movies/:id' ,to:'movies#update'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

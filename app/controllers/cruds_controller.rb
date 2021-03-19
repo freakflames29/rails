@@ -1,4 +1,4 @@
-class CrudController < ApplicationController
+class CrudsController < ApplicationController
   def index
   	@names=Crud.all
 

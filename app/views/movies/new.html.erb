@@ -1,0 +1,11 @@
+<h1>ok</h1>
+<%= link_to "howe page", movies_path %>
+
+
+<%= form_for @movie do |f| %>
+	<%= f.text_field :name %>
+	<%= f.text_field :genre %>
+	<%= f.text_field :hero %>
+	<%= f.submit %>
+	
+<% end %>

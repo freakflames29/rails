@@ -1,0 +1,10 @@
+<%= flash[:notice] %>
+<h1>hello world</h1>
+<%= link_to "new",movies_new_path  %>
+<hr>
+
+<% @movies.each do |i| %>
+	<p> <%= i.name %> </p>
+	<%= link_to "Show",show_path(i)  %>
+	<hr>	
+<% end %>
