@@ -1,10 +1,13 @@
 <%= flash[:notice] %>
 <h1>hello world</h1>
-<%= link_to "new",movies_new_path  %>
+<%= link_to "new",new_movies_path  %>
 <hr>
 
 <% @movies.each do |i| %>
 	<p> <%= i.name %> </p>
-	<%= link_to "Show",show_path(i)  %>
+	<%= link_to "Show",movie_path(i)  %> | 
+	<%= link_to "delete",movie_path(i),method: :delete,data:{confirm:"delete ?"}  %> | 
+	<%= link_to "edit",edit_movies_path(i)  %>
+
 	<hr>	
 <% end %>
