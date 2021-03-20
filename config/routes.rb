@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   # movies routes
   # we are doing as those are url helpers
-
+  
   get 'movies', to: 'movies#index',:as=>"movies"
   get 'movies/new' ,to: 'movies#new',:as=>"new_movies"
 

@@ -1,6 +1,7 @@
 <h1>edit</h1>
 <%#= link_to "howe page", movies_path %>
 
+<%= javascript_pack_tag 'app.js' %> 
 
 <%= form_for @movie do |f| %>
 	<%= f.text_field :name %>
