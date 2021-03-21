@@ -1,7 +1,14 @@
-<%= notice %>
-<h1> This is Root </h1>
+<% if notice %>
+	<div class="alert alert-warning alert-dismissible fade show m-4" role="alert">
+	  	<%= notice %>
+	 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+
+<% end %>
+
+<h1 class="m-4"> This is Root </h1>
 
 <% if @reg %>
-	<h2>You are logged in as <%= @reg.name %> </h2>
-	<%= button_to 'Logout',logout_path,method: :delete, data:{confirm:"Are you sure ?"}  %>
+	<h2 class="ms-4">You are logged in as <%= @reg.name %> </h2>
+	<%= link_to "Logout",logout_path,method: :delete,data:{confirm:"are you sure"},class:'btn btn-dark ms-4'  %>
 <% end %>

@@ -1,22 +1,47 @@
-<h1>Sign up</h1>
+<h1 class="m-3">Sign up</h1>
 
 <% if @register.errors.any? %>
 	<% @register.errors.full_messages.each do |msg| %>
-		<li style="color:red"> <%= msg %> </li>
+		<div class="alert alert-warning alert-dismissible fade show m-4" role="alert">
+			<li style="color:red"> <%= msg %> </li>
+			 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
 	<% end %>
 <% end %>
 
 <%= form_with model:@register ,url:signup_path do |f| %>
+	<div class="m-3 ">
+		<%= f.label :name,class:'form-label' %>
+		<div class="col-sm-5">
+			
+		<%= f.text_field :name,class:'form-control' %>
+		</div>
+	</div>
+
+	<div class="m-3">
+		<%= f.label :email,class:'form-label' %>
+		<div class="col-sm-5">
+		<%= f.text_field :email,class:'form-control' %> 
+		</div>
+	</div>
+
+	<div class="m-3">
+		<%= f.label :password,class:'form-label' %>
+		<div class="col-sm-5">
+		<%= f.password_field :password,class:'form-control' %>
+		</div>
+	</div>
+
+	<div class="m-3">
+		<%= f.label :password_confirmation,class:'form-label' %>
+		<div class="col-sm-5">
+		<%= f.password_field :password_confirmation,class:'form-control' %>
+		</div>
+	</div>
 	
-	<%= f.label :name %>
-	<%= f.text_field :name %> <br><br>
-	<%= f.label :email %>
-	<%= f.text_field :email %> <br><br>
-	<%= f.label :password %>
-	<%= f.password_field :password %> <br><br>
-	<%= f.label :password_confirmation %>
-	<%= f.password_field :password_confirmation %> <br><br>
-	<%= f.submit "sign up" %>
+	
+	
+	<%= f.submit "Sign up" ,class:'btn btn-dark ms-3'%>
 
 
 <% end %>
