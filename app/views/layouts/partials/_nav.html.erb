@@ -25,17 +25,25 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>
       </ul>
-      <div class="mx-2 gap-2">
-        <%= link_to "Sign up",signup_path,class:"btn btn-outline-warning" %>
-        
-        <%= link_to "Login",login_path,class:"btn btn-outline-primary" %>
+      <% if Current.reg %>
+          <li class="nav-item">
+            
+          <%= link_to Current.reg.email, edit_password_path,class:' btn btn-primary btn-sm'%> 
+          </li>
+            <%= link_to "Logout",logout_path,method: :delete,data:{confirm:"are you sure"},class:'btn btn-danger ms-4'  %>
 
-     
-        
-      </div>
+      <% else %>
+
+        <div class="mx-2 gap-2">
+          <%= link_to "Sign up",signup_path,class:"btn btn-outline-warning" %>
+          
+          <%= link_to "Login",login_path,class:"btn btn-outline-primary" %>
+        </div>
+
+      <% end %>
 
     </div>
   </div>

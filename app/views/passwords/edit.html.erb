@@ -1,0 +1,24 @@
+<h1>Edit password</h1>
+
+
+<%= form_with model:Current.reg ,url:edit_password_path do |f| %>
+	<div class="m-3">
+		<%= f.label :password,class:'form-label' %>
+		<div class="col-sm-5">
+		<%= f.password_field :password,class:'form-control' %>
+		</div>
+	</div>
+
+	<div class="m-3">
+		<%= f.label :password_confirmation,class:'form-label' %>
+		<div class="col-sm-5">
+		<%= f.password_field :password_confirmation,class:'form-control' %>
+		</div>
+	</div>
+	
+	
+	
+	<%= f.submit "Update Password" ,class:'btn btn-dark ms-3'%>
+
+
+<% end %>

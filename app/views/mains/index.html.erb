@@ -6,9 +6,12 @@
 
 <% end %>
 
-<h1 class="m-4"> This is Root </h1>
+<h1 class="m-4 text-center"> This is Root </h1>
 
-<% if @reg %>
-	<h2 class="ms-4">You are logged in as <%= @reg.name %> </h2>
+<% if Current.reg %>
+	<h2 class="ms-4 text-center">You are logged in as <%= Current.reg.name %> </h2>
+	<div class="text-center mt-2">
+		
 	<%= link_to "Logout",logout_path,method: :delete,data:{confirm:"are you sure"},class:'btn btn-dark ms-4'  %>
+	</div>
 <% end %>

@@ -17,5 +17,9 @@ Rails.application.routes.draw do
   get 'login',to:'sessions#new'
   post 'login',to:'sessions#create'
 
+  #edit password
+  get 'password', to:'passwords#edit',as: :edit_password # for showing password edit field
+  patch 'password', to:'passwords#update' # for updating the password
+ 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

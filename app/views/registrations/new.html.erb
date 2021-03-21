@@ -1,5 +1,11 @@
 <h1 class="m-3">Sign up</h1>
 
+<% if notice %>
+	<div class="alert alert-warning alert-dismissible fade show m-4" role="alert">
+			<li style="color:red" > <%= notice %> </li>
+			 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+<% end %>
 <% if @register.errors.any? %>
 	<% @register.errors.full_messages.each do |msg| %>
 		<div class="alert alert-warning alert-dismissible fade show m-4" role="alert">
