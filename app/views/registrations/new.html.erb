@@ -1,0 +1,22 @@
+<h1>Sign up</h1>
+
+<% if @register.errors.any? %>
+	<% @register.errors.full_messages.each do |msg| %>
+		<li style="color:red"> <%= msg %> </li>
+	<% end %>
+<% end %>
+
+<%= form_with model:@register ,url:signup_path do |f| %>
+	
+	<%= f.label :name %>
+	<%= f.text_field :name %> <br><br>
+	<%= f.label :email %>
+	<%= f.text_field :email %> <br><br>
+	<%= f.label :password %>
+	<%= f.password_field :password %> <br><br>
+	<%= f.label :password_confirmation %>
+	<%= f.password_field :password_confirmation %> <br><br>
+	<%= f.submit "sign up" %>
+
+
+<% end %>

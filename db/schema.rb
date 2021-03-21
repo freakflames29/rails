@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_11_145717) do
+ActiveRecord::Schema.define(version: 2021_03_21_060710) do
+
+  create_table "cruds", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name"
+    t.string "title"
+    t.integer "age"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "friends", charset: "utf8mb4", force: :cascade do |t|
     t.string "first_name"
@@ -20,6 +28,37 @@ ActiveRecord::Schema.define(version: 2021_03_11_145717) do
     t.string "twiter"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "movies", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name"
+    t.string "genre"
+    t.string "hero"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "portfolios", charset: "utf8mb4", force: :cascade do |t|
+    t.string "title"
+    t.text "subtitle"
+    t.text "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "registrations", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "students", charset: "utf8mb4", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "firstname"
+    t.string "lastname"
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|

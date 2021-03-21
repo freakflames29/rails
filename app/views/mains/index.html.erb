@@ -1,0 +1,7 @@
+<%= notice %>
+<h1> This is Root </h1>
+
+<% if @reg %>
+	<h2>You are logged in as <%= @reg.name %> </h2>
+	<%= button_to 'Logout',logout_path,method: :delete, data:{confirm:"Are you sure ?"}  %>
+<% end %>
