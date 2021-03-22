@@ -1,5 +1,21 @@
 <h1>Edit password</h1>
 
+<% if flash[:alert] %>
+	<div class="alert alert-warning alert-dismissible alert-danger fade show m-4" role="alert">
+				<li style="color:red"> <%= flash[:alert] %> </li>
+			 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+<% end %>
+
+
+<% if Current.reg.errors.any? %>
+	<% Current.reg.errors.full_messages.each do |msg| %>
+		<div class="alert alert-warning alert-dismissible fade show m-4" role="alert">
+				<li style="color:red"> <%= msg %> </li>
+			 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	<% end %>
+<% end %>
 
 <%= form_with model:Current.reg ,url:edit_password_path do |f| %>
 	<div class="m-3">

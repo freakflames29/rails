@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
 		end
 	end
 	def user_loggedin?
-		redirect_to signup_path, notice:"You must be signup to edit password" if Current.reg.nil?
+		redirect_to login_path, notice:"You must be login to edit password" if Current.reg.nil?
 	end
 end

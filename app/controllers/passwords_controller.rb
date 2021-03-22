@@ -3,8 +3,17 @@ class PasswordsController < ApplicationController
 	def edit
 	end
 	def update
-		if Current.user.update(pass_parm)
-			#redirect and other codes goes here
+		#checking if password fields are blank or not
+		if params[:registration][:password]==""
+			render :edit
+			flash[:alert]="Field can't be blank"
+
+		elsif Current.reg.update(pass_parm)
+			redirect_to root_path, notice: "Password updated successfully"
+			puts 'ksldjsakjdfksfjsdkfjdks'+' " '+params[:registration][:password]+' " '
+			
+		else
+			render :edit
 		end
 
 	end
