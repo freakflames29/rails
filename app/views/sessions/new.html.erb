@@ -1,4 +1,5 @@
 <h1 class="m-3">Login</h1>
+
 <% if notice %>
 	<div class="alert alert-warning alert-dismissible alert-danger fade show m-4" role="alert">
 			<%= notice %>
@@ -6,6 +7,12 @@
 	</div>
 <% end %>
 
+<% if flash[:succ] %>
+	<div class="alert alert-success alert-dismissible  fade show m-4" role="alert">
+			<%= flash[:succ] %>
+	 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+<% end %>
 
 
 <% if flash[:alert] %>

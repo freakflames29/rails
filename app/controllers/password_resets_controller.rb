@@ -17,4 +17,29 @@ class PasswordResetsController < ApplicationController
 		end
 		
 	end
+	def edit
+		@user=Registration.find_signed!(params[:token],purpose:'password_reset')
+	rescue ActiveSupport::MessageVerifier::InvalidSignature
+		redirect_to password_reset_path,notice:"Link expired! try again"
+	end
+	def update
+		@user=Registration.find_signed!(params[:token],purpose:'password_reset')
+		if params[:registration][:password]==""
+			render :edit
+			flash[:error]="Field can't be blank"
+		elsif @user.update(pass_param)
+			redirect_to login_path
+			flash[:succ]="Password reset successfully login to continue"
+		else
+			render :edit
+		end
+
+		puts @user.email
+
+	end
+	private
+	def pass_param
+		params.require(:registration).permit(:password,:password_confirmation)
+
+	end
 end

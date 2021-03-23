@@ -1,7 +1,8 @@
-<h1>Password Reset</h1>
-<% if flash[:alert] %>
+<h1 class="m-3">Password Reset</h1>
+<% if flash[:alert] || notice %>
 	 <div class="alert alert-warning alert-dismissible alert-danger fade show m-4" role="alert">
 			<%= flash[:alert] %>
+			<%= notice %>
 	 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 
