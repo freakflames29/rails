@@ -1,4 +1,12 @@
 <h1>Password Reset</h1>
+<% if flash[:alert] %>
+	 <div class="alert alert-warning alert-dismissible alert-danger fade show m-4" role="alert">
+			<%= flash[:alert] %>
+	 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<% end %>
+
 <%= form_with url:password_reset_path do |f| %>
 	<div class="m-3">
 		<%= f.label :email,class:'form-label' %>
