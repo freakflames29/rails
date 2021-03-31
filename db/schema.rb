@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_21_060710) do
+ActiveRecord::Schema.define(version: 2021_03_31_135415) do
 
   create_table "cruds", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
@@ -61,6 +61,15 @@ ActiveRecord::Schema.define(version: 2021_03_21_060710) do
     t.string "lastname"
   end
 
+  create_table "tweets", charset: "utf8mb4", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.bigint "registration_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["registration_id"], name: "index_tweets_on_registration_id"
+  end
+
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.text "bio"
@@ -69,4 +78,5 @@ ActiveRecord::Schema.define(version: 2021_03_21_060710) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "tweets", "registrations"
 end

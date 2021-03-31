@@ -8,4 +8,7 @@ class ApplicationController < ActionController::Base
 	def user_loggedin?
 		redirect_to login_path, notice:"You must be login to edit password" if Current.reg.nil?
 	end
+	def loggedin?
+		redirect_to login_path, notice:"You must be login to Create tweet" if Current.reg.nil?
+	end
 end

@@ -1,0 +1,10 @@
+<h1>You have <%= pluralize(@MyTweets.count,'tweet') %> </h1>
+
+<% @MyTweets.each do |tweet| %>
+  <h2><%= tweet.title %></h2>
+  <p><%= tweet.body %></p>
+  <%= link_to "Show", tweet_path(tweet.id) %>
+  <%= link_to "Edit", edit_tweet_path(tweet.id) %>
+  <%= link_to "Delete", tweet_path(tweet.id) ,method: :delete,data: { confirm: 'You can get this back do want to relly delete this?'}%>
+  <hr>
+<% end %>

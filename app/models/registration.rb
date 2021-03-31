@@ -1,4 +1,5 @@
 class Registration < ApplicationRecord
+	has_many :tweets
 	has_secure_password
 
 	validates :name, presence: true ,length: {in:5..30,message:" must be in 5-30 charector"}

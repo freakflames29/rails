@@ -1,4 +1,4 @@
-<h1>Edit password</h1>
+<h1 class="m-5">Change password for <%= Current.reg.email %></h1>
 
 <% if flash[:alert] %>
 	<div class="alert alert-warning alert-dismissible alert-danger fade show m-4" role="alert">
@@ -31,9 +31,9 @@
 		<%= f.password_field :password_confirmation,class:'form-control' %>
 		</div>
 	</div>
-	
-	
-	
+
+
+
 	<%= f.submit "Update Password" ,class:'btn btn-dark ms-3'%>
 
 
